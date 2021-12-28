@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #d9dcd6;
+}
+h1,
+h2,
+h3 {
+  color: #0a3e83 !important;
+}
+
+/* Start Header/Navigation tags */
+header {
+  padding: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background-color: #0a3e83;
+  color: #ffffff;
+}
+
+header h1 {
+  display: inline-block;
+  font-size: 48px;
+  color: #ffffff !important;
+}
+
+header div {
+  padding-top: 15px;
+  margin-right: 20px;
+  float: right;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+}
+
+header div ul {
+  list-style-type: none;
+}
+
+header div ul li {
+  display: inline-block;
+  margin-left: 25px;
+}
+header div ul li a {
+  color: rgb(248, 155, 41);
+}
+
+.hero {
+  height: 500px;
+  width: 100%;
+  margin-bottom: 25px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-img {
+  opacity: 40%;
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+
+.hero-content {
+  position: relative;
+  top: 150px;
+}
+
+h1 {
+  color: #0a3e83 !important;
+  font-weight: 900 !important;
+  text-decoration: underline;
+  text-decoration-color: rgb(248, 155, 41);
+}
+
+h2 {
+  font-style: italic;
+}
