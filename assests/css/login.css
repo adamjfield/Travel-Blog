@@ -7,6 +7,11 @@
 body {
   background-color: #d9dcd6;
 }
+h1,
+h2,
+h3 {
+  margin: 0;
+}
 
 /* Start Header/Navigation tags */
 header {
@@ -54,7 +59,7 @@ header div ul li a {
 }
 
 .hero-img {
-  opacity: 40%;
+  opacity: 0.15;
   position: absolute;
   width: 100%;
   height: auto;
@@ -81,8 +86,13 @@ header div ul li a {
 .hero-content h4 {
   font-size: 1.3em;
 }
+.form-page {
+  vertical-align: middle;
+}
 
-.hero h3,
-h4 {
-  color: #0a3e83 !important;
+.formDiv {
+  text-align: center;
+}
+.formDiv .form-label {
+  text-align: center;
 }
