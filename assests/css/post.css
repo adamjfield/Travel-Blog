@@ -94,3 +94,9 @@ header div ul li a {
   text-align: center;
   justify-content: center;
 }
+
+.ctrInput {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}

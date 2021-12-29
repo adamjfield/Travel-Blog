@@ -93,6 +93,9 @@ header div ul li a {
 .formDiv {
   text-align: center;
 }
-.formDiv .form-label {
-  text-align: center;
+
+.ctrInput {
+  position: relative;
+  display: block;
+  margin: 0 auto;
 }
