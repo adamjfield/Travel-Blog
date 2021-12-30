@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Travel Blog Post</title>
-    <link rel="stylesheet" href="./assests/css/post.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="./public/stylesheets/post.css" />
   </head>
 
   <body>
@@ -35,12 +35,12 @@
       </div>
     </header>
 
+    <img
+      class="hero-img"
+      src="./public/images/worldpoliticallarge.jpg"
+      alt="world map with country's name"
+    />
     <div class="hero">
-      <img
-        class="hero-img"
-        src="/assests/images/worldpoliticallarge.jpg"
-        alt="world map with country's name"
-      />
       <section class="formDiv">
         <h2>Create New Post</h2>
 
@@ -62,6 +62,9 @@
               class="ctrInput w200"
             ></textarea>
           </div>
+          <div class="alert alert-danger post-alert" id="post-alert">
+            <strong>Must input post title and text!</strong>
+          </div>
           <button type="submit" class="btn">Create</button>
         </form>
       </section>
@@ -69,7 +72,10 @@
         <h2>Your Posts</h2>
         <ol>
           <li>
-            <a href="/dashboard/edit/{{post.id}}" class="edit-link"
+            <a
+              href="/dashboard/edit/{{post.id}}"
+              class="edit-link"
+              id="edit-post"
               >Edit Post</a
             >
           </li>
@@ -77,4 +83,5 @@
       </section>
     </div>
   </body>
+  <script src="./public/javascript/add-post.js"></script>
 </html>

@@ -92,16 +92,10 @@ header div ul li a {
 
 .formDiv {
   text-align: center;
-  justify-content: center;
 }
 
 .ctrInput {
   position: relative;
   display: block;
   margin: 0 auto;
-}
-
-.post-alert {
-  display: none;
-  margin: 10px;
 }

@@ -7,11 +7,6 @@
 body {
   background-color: #d9dcd6;
 }
-h1,
-h2,
-h3 {
-  margin: 0;
-}
 
 /* Start Header/Navigation tags */
 header {
@@ -59,7 +54,7 @@ header div ul li a {
 }
 
 .hero-img {
-  opacity: 0.15;
+  opacity: 40%;
   position: absolute;
   width: 100%;
   height: auto;
@@ -86,22 +81,8 @@ header div ul li a {
 .hero-content h4 {
   font-size: 1.3em;
 }
-.form-page {
-  vertical-align: middle;
-}
 
-.formDiv {
-  text-align: center;
-  justify-content: center;
-}
-
-.ctrInput {
-  position: relative;
-  display: block;
-  margin: 0 auto;
-}
-
-.post-alert {
-  display: none;
-  margin: 10px;
+.hero h3,
+h4 {
+  color: #0a3e83 !important;
 }
