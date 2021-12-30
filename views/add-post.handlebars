@@ -1,0 +1,41 @@
+    <div class="hero">
+      <img
+        class="hero-img"
+        src="/assests/images/worldpoliticallarge.jpg"
+        alt="world map with country's name"
+      />
+      <section class="formDiv">
+        <h2>Create New Post</h2>
+
+        <form class="new-post-form">
+          <div>
+            <label for="post-title">Title</label>
+            <input
+              type="text"
+              id="post-title"
+              name="post-title"
+              class="ctrInput w25"
+            />
+          </div>
+          <div>
+            <label for="post-text">Text</label>
+            <textarea
+              id="post-text"
+              name="post-text"
+              class="ctrInput w200"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn">Create</button>
+        </form>
+      </section>
+      <section class="formDiv">
+        <h2>Your Posts</h2>
+        <ol>
+          <li>
+            <a href="/dashboard/edit/{{post.id}}" class="edit-link"
+              >Edit Post</a
+            >
+          </li>
+        </ol>
+      </section>
+    </div>
