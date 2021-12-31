@@ -65,20 +65,26 @@ header div ul li a {
   height: auto;
 }
 
-.hero-content {
+.all-posts {
   position: relative;
   top: 150px;
 }
 
+.hero-content {
+  position: relative;
+}
+
 .hero-content h2 {
   color: #0a3e83;
-  font-size: 2em;
+  font-size: 6em;
   font-weight: 900;
   text-decoration: underline;
   text-decoration-color: rgb(248, 155, 41);
+  text-align: center;
+  margin: 50px 0px -80px;
 }
 
-.hero-content h3 {
+.all-posts h3 {
   font-style: italic;
   font-size: 1.5em;
 }
@@ -87,7 +93,10 @@ header div ul li a {
   font-size: 1.3em;
 }
 
-.hero h3,
-h4 {
-  color: #0a3e83 !important;
+.hero h3 {
+  color: #0a3e83;
+}
+
+.fav-img {
+  width: 100%;
 }
