@@ -7,11 +7,6 @@
 body {
   background-color: #d9dcd6;
 }
-h1,
-h2,
-h3 {
-  margin: 0;
-}
 
 /* Start Header/Navigation tags */
 header {
@@ -38,24 +33,8 @@ header div {
   font-size: 20px;
 }
 
-header div ul {
-  list-style-type: none;
-}
-
-header div ul li {
-  display: inline-block;
-  margin-left: 25px;
-}
-header div ul li a {
+nav a {
   color: rgb(248, 155, 41);
-}
-
-.hero {
-  height: 600px;
-  width: 100%;
-  margin-bottom: 25px;
-  overflow: hidden;
-  position: relative;
 }
 
 .hero-img {
@@ -63,6 +42,7 @@ header div ul li a {
   position: absolute;
   width: 100%;
   height: auto;
+  z-index: -1;
 }
 
 .hero-content {
@@ -70,12 +50,20 @@ header div ul li a {
   top: 150px;
 }
 
-.hero-content h2 {
+h2 {
   color: #0a3e83;
   font-size: 2em;
   font-weight: 900;
   text-decoration: underline;
   text-decoration-color: rgb(248, 155, 41);
+}
+
+h3 a {
+  color: #0a3e83;
+}
+
+h3 a:hover {
+  color: rgb(248, 155, 41);
 }
 
 .hero-content h3 {
