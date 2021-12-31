@@ -16,8 +16,8 @@ h3 {
 /* Start Header/Navigation tags */
 header {
   padding: 20px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
   background-color: #0a3e83;
   color: #ffffff;
 }
@@ -34,7 +34,7 @@ header div {
   padding-top: 15px;
   margin-right: 20px;
   float: right;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 20px;
 }
 
@@ -98,4 +98,9 @@ header div ul li a {
   position: relative;
   display: block;
   margin: 0 auto;
+}
+
+.post-alert {
+  display: none;
+  margin: 10px;
 }

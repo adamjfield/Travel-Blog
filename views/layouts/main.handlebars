@@ -8,44 +8,32 @@
       rel='stylesheet'
       href='https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css'
     />
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    {{! <link rel='stylesheet' href='/stylesheets/style.css' /> }}
     <link rel='stylesheet' href='/stylesheets/login.css' />
-    <link rel='stylesheet' href='/stylesheets/dashboard.css' />
-    <link rel='stylesheet' href='/stylesheets/blog.css' />
+    {{! <link rel='stylesheet' href='/stylesheets/dashboard.css' />/ }}
+    {{! <link rel='stylesheet' href='/stylesheets/blog.css' /> }}
   </head>
 
   <body>
-    <header>
+    <header class='sticky-top bg-primary text-white'>
       <h1>Travel Blog</h1>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <a href='/'>Home</a>
-            </li>
-            <li>
-              <a href='/blog'>Blog</a>
-            </li>
-            {{!-- {{#if loggedIn}} --}}
-            <li>
-              <a href='/dashboard'>Dashboard</a>
-            </li>
-            {{!-- {{/if}} --}}
-            {{#if loggedIn}}
-            <li>
-              <a href='Logout'>Logout</a>
-            </li>
-            {{else}}
-            <li>
-              <a href='/login'>Login</a>
-            </li>
-            {{/if}}
-          </ul>
+        <nav class='nav justify-content-end'>
+          <a class='nav-link' href='/'>Home</a>
+          <a class='nav-link' href='/blog'>Blog</a>
+          {{!-- {{#if loggedIn}} --}}
+          <a class='nav-link' href='/dashboard'>Dashboard</a>
+          {{!-- {{/if}} --}}
+          {{#if loggedIn}}
+            <a class='nav-link' href='Logout'>Logout</a>
+          {{else}}
+            <a class='nav-link' href='/login'>Login</a>
+          {{/if}}
         </nav>
       </div>
     </header>
     <main>
-        {{{ body }}}
+      {{{body}}}
     </main>
   </body>
 </html>

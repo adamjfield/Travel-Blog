@@ -7,11 +7,6 @@
 body {
   background-color: #d9dcd6;
 }
-h1,
-h2,
-h3 {
-  margin: 0;
-}
 
 /* Start Header/Navigation tags */
 header {
@@ -53,12 +48,11 @@ header div ul li a {
 .hero {
   height: 600px;
   width: 100%;
-  margin-bottom: 25px;
-  overflow: hidden;
   position: relative;
 }
 
 .hero-img {
+  margin-top: -50px;
   opacity: 40%;
   position: absolute;
   width: 100%;
