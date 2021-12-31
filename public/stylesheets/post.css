@@ -59,7 +59,7 @@ header div ul li a {
 }
 
 .hero-img {
-  opacity: 40%;
+  opacity: 0.15;
   position: absolute;
   width: 100%;
   height: auto;
