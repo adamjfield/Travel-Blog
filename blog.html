@@ -1,23 +1,61 @@
-<img
-  class='hero-img'
-  src='/images/worldpoliticallarge.jpg'
-  alt="world map with country's name"
-/>
-<div>
-  <div>
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Travel Blog Dashboard</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./assests/css/dashboard.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Travel Blog</h1>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <a href="#Home">Home</a>
+            </li>
+            <li>
+              <a href="Dashboard">Dashboard</a>
+            </li>
+            <li>
+              <a href="Login">Login</a>
+            </li>
+            <li>
+              <a href="Logout">Logout</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="hero">
+      <img
+        class="hero-img"
+        src="/assests/images/worldpoliticallarge.jpg"
+        alt="world map with country's name"
+      />
+<div class='hero'>
+  <div class='hero-content'>
     <h2 class='text-center p-4'>Everyone's Favorite Destinations</h2>
     <div class='all-posts container'>
-      <div class='card mb-5 row border-primary'>
+      <div class='card mb-5 row'>
         <div class='card-header'><h3><a
               class='link'
               href='/dashboard/edit/{{id}}'
             >Kanapolis State Park</a></h3></div>
-        <div class='card-body post'>
+        <div class='card-body'>
           <blockquote class='blockquote row'>
             <div class='post-image mx-auto col-md-12 col-lg-6'>
               <img
                 class='fav-img img-fluid'
-                src='/images/IMG_0532.JPG'
+                src='./assests/images/IMG_0532.JPG'
                 alt='riding trails'
                 style='height: auto;width:400px p-4'
               />
@@ -37,7 +75,7 @@
           </blockquote>
         </div>
       </div>
-      <div class='card mb-5 row border-primary'>
+      <div class='card mb-5 row'>
         <div class='card-header'><h3><a
               class='link'
               href='/dashboard/edit/{{id}}'
@@ -47,7 +85,7 @@
             <div class='post-image mx-auto col-md-12 col-lg-6'>
               <img
                 class='fav-img img-fluid'
-                src='/images/IMG_0532.JPG'
+                src='./assests/images/IMG_0532.JPG'
                 alt='riding trails'
                 style='height: auto;width:400px p-4'
               />
@@ -66,7 +104,7 @@
           </blockquote>
         </div>
       </div>
-      <div class='card mb-5 row border-primary'>
+      <div class='card mb-5 row'>
         <div class='card-header'><h3><a
               class='link'
               href='/dashboard/edit/{{id}}'
@@ -76,7 +114,7 @@
             <div class='post-image mx-auto col-md-12 col-lg-6'>
               <img
                 class='fav-img img-fluid'
-                src='/images/IMG_0532.JPG'
+                src='./assests/images/IMG_0532.JPG'
                 alt='riding trails'
                 style='height: auto;width:400px p-4'
               />
@@ -95,7 +133,7 @@
           </blockquote>
         </div>
       </div>
-      <div class='card mb-5 row border-primary'>
+      <div class='card mb-5 row'>
         <div class='card-header'><h3><a
               class='link'
               href='/dashboard/edit/{{id}}'
@@ -105,7 +143,7 @@
             <div class='post-image mx-auto col-md-12 col-lg-6'>
               <img
                 class='fav-img img-fluid'
-                src='/images/IMG_0532.JPG'
+                src='./assests/images/IMG_0532.JPG'
                 alt='riding trails'
                 style='height: auto;width:400px p-4'
               />
@@ -127,3 +165,6 @@
     </div>
   </div>
 </div>
+  </body>
+  <footer></footer>
+</html>

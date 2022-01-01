@@ -1,15 +1,15 @@
 async function addPostFormHandler(event) {
   event.preventDefault();
 
-  const postTitle = document.querySelector('#post-title').value.trim();
-  const postText = document.querySelector('#post-text').value.trim();
-  const alert = document.querySelector('#post-alert');
+  const title = document.querySelector('#post-title').value.trim();
+  const content = document.querySelector('#content').value.trim();
+  const postAlert = document.querySelector('#post-alert');
 
-  if (postTitle === '' || postText === '') {
-    alert.style.display = 'block';
+  if (title === '' || content === '') {
+    postAlert.style.display = 'block';
     return;
   } else {
-    alert.style.display = 'none';
+    postAlert.style.display = 'none';
   }
 
   const response = await fetch('api/posts', {
