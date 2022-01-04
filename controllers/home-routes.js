@@ -1,5 +1,5 @@
-// const sequelize = require('../config/connection');
-// const { Post, User, Comment } = require('../models');
+const sequelize = require('../config/connection');
+const { Post, User, Comment } = require('../models');
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
@@ -11,7 +11,6 @@ router.get('/login', (req, res) => {
     res.redirect('/');
     return;
   }
-
   res.render('login');
 });
 
