@@ -1,3 +1,16 @@
+var addedImages = [];
+var myWidget = cloudinary.createUploadWidget({ cloudName: 'dbbxaadyd', uploadPreset: 'ml_default'}, async(error, result) => {
+  console.log(result)
+  if (!error && result && result.event === "success") { 
+    //console.log('Done! Here is the image info: ', result.info); 
+    console.log('Url : ' + result.info.url)
+    addedImages.push(result.info.url);    
+  } 
+  else {console.log(error)} 
+})
+document.getElementById("upload_widget").addEventListener("click", function(){
+myWidget.open(); }, false);
+
 async function addPostFormHandler(event) {
   event.preventDefault();
 
@@ -12,7 +25,7 @@ async function addPostFormHandler(event) {
     postAlert.style.display = 'none';
   }
 
-  const response = await fetch('api/posts', {
+  let response_post = await fetch('api/posts', {
     method: 'post',
     body: JSON.stringify({
       title,
@@ -22,11 +35,24 @@ async function addPostFormHandler(event) {
       'Content-Type': 'application/json',
     },
   });
+  const result = await response_post.json()
+  if (response_post.ok) {
+    let response = await fetch('./api/image', {
+      method: 'post',
+      body: JSON.stringify({
+        images: addedImages,
+        post_id: result.id,
+      }),
+      headers: { 'Content-Type': 'application/json' },
+    });
 
-  if (response.ok) {
-    document.location.replace('/dashboard');
+    if (response) {
+      document.location.replace('/dashboard');
+    } else {
+      document.location.replace('/dashboard');
+    }  
   } else {
-    alert(response.statusText);
+    alert(response_post.statusText);
   }
 }
 

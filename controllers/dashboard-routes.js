@@ -4,7 +4,7 @@ const router = require('express').Router();
 // const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
-
+  console.log(req)
   res.render('dashboard');
 });
 
