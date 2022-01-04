@@ -7,6 +7,9 @@ async function commentFormHandler(event) {
   ];
   const commentBlankAlert = document.querySelector('#comment-alert');
 
+  console.log(comment_text);
+
+
   if (comment_text === '') {
     commentBlankAlert.style.display = 'block';
     return;

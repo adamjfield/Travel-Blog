@@ -97,6 +97,10 @@ h3 a:hover {
   margin: 10px;
 }
 
+.comment-alert {
+  display: none;
+}
+
 .dropdown-nav {
   display: none;
 }
