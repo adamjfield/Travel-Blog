@@ -1,0 +1,26 @@
+<img
+  class='hero-img'
+  src='/images/worldpoliticallarge.jpg'
+  alt="world map with country's name"
+/>
+<div class='all-posts container'>
+  <h2 class='text-center p-4'>Everyone's Favorite Destinations</h2>
+
+{{> post-info post}}
+    
+</div>
+{{#if loggedIn}}
+<div class="card">
+    <form class="card-body comment-form px-auto" id="comment-form">
+    <label class="form-label mx-auto" style="font-weight: bold;">Comment: </label>
+    <input id="comment" class="form-input mx-auto" style="width: 75%;" />
+</form>
+<button type="submit" class="btn comment-btn m-1">Submit</button>
+</div>
+{{/if}}
+
+{{> comments post.comments}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
