@@ -3,36 +3,19 @@
   src='/images/worldpoliticallarge.jpg'
   alt="world map with country's name"
 />
-<div class='hero container'>
+<div class='hero container pt-4'>
   <div class='row'>
-    <div class='col-lg-6 col-sm-12'>
-      <section class='formDiv'>
+    
+    {{#if post.length}}
+    <section class='formDiv col'>
         <h2>Your Posts</h2>
-        <div class='card border-primary'>
-          <div class='card-header'>
-            <h3>
-              <a class='link' href='/dashboard/edit/{{id}}'>Kanapolis State Park</a>
-            </h3>
-          </div>
-        </div>
-        <div class='card border-primary'>
-          <div class='card-header'>
-            <h3>
-              <a class='link' href='/dashboard/edit/{{id}}'>Flying R Ranch</a>
-            </h3>
-          </div>
-        </div>
-        <div class='card border-primary'>
-          <div class='card-header'>
-            <h3>
-              <a class='link' href='/dashboard/edit/{{id}}'>Yosemite National
-                Park</a>
-            </h3>
-          </div>
-        </div>
-      </section>
-    </div>
-    <div class='col-lg-6 col-sm-12'>
+        {{#each posts as |post|}}
+          {{> dashboard-postinfo post}}
+        {{/each}}
+    </section>
+    {{/if}}
+
+    <div class='col'>
       <section class='formDiv'>
         <h2>Create New Post</h2>
         <form class='new-post-form'>
@@ -41,15 +24,15 @@
             type='text'
             id='post-title'
             name='post-title'
-            class='ctrInput w25 border-primary'
-            style='width:75%;font-size:14px;'
+            class='ctrInput border-primary'
+            style='width:50%;font-size:14px;'
           />
           <label for='content'>Text</label>
           <input
             id='content'
             name='content'
             class='ctrInput border-primary'
-            style='height:200px;font-size:14pt;width:100%'
+            style='height:200px;font-size:14pt;width:75%'
           />
           <div class='alert alert-danger post-alert' id='post-alert'>
             <strong>Must input post title and text!</strong>
