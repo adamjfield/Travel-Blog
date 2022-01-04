@@ -6,7 +6,6 @@
   "description": "",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/adamjfield/Project-2.git"
@@ -19,6 +18,7 @@
   },
   "homepage": "https://github.com/adamjfield/Project-2#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
