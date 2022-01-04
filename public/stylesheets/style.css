@@ -7,11 +7,6 @@
 body {
   background-color: #d9dcd6;
 }
-h1,
-h2,
-h3 {
-  margin: 0;
-}
 
 /* Start Header/Navigation tags */
 header {
@@ -38,31 +33,20 @@ header div {
   font-size: 20px;
 }
 
-header div ul {
-  list-style-type: none;
-}
-
-header div ul li {
-  display: inline-block;
-  margin-left: 25px;
-}
-header div ul li a {
+nav a {
   color: rgb(248, 155, 41);
 }
 
-.hero {
-  height: 600px;
-  width: 100%;
-  margin-bottom: 25px;
-  overflow: hidden;
-  position: relative;
+nav a:hover {
+  color: rgb(255, 255, 255);
 }
 
 .hero-img {
-  opacity: 40%;
+  opacity: 0.15;
   position: absolute;
   width: 100%;
   height: auto;
+  z-index: -1;
 }
 
 .hero-content {
@@ -70,12 +54,20 @@ header div ul li a {
   top: 150px;
 }
 
-.hero-content h2 {
+h2 {
   color: #0a3e83;
   font-size: 2em;
   font-weight: 900;
   text-decoration: underline;
   text-decoration-color: rgb(248, 155, 41);
+}
+
+h3 a {
+  color: #0a3e83;
+}
+
+h3 a:hover {
+  color: rgb(248, 155, 41);
 }
 
 .hero-content h3 {
@@ -86,8 +78,61 @@ header div ul li a {
 .hero-content h4 {
   font-size: 1.3em;
 }
+.form-page {
+  vertical-align: middle;
+}
 
-.hero h3,
-h4 {
-  color: #0a3e83 !important;
+.formDiv {
+  text-align: center;
+}
+
+.ctrInput {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+
+.post-alert {
+  display: none;
+  margin: 10px;
+}
+
+.dropdown-nav {
+  display: none;
+}
+
+.menu-btn {
+  background-color: rgb(248, 155, 41);
+  color: #0a3e83;
+}
+
+.menu-btn:hover {
+  background-color: #ffffff;
+  color: #0a3e83;
+}
+
+.comment-btn {
+  background-color: rgb(248, 155, 41);
+  color: #0a3e83;
+}
+
+.comment-btn:hover {
+  background-color: #0a3e83;
+  color: rgb(248, 155, 41);
+}
+
+@media (max-width: 992px) {
+  .nav-bar {
+    display: none;
+  }
+
+  .dropdown-nav {
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  header h1 {
+    font-size: 30px;
+  }
 }
