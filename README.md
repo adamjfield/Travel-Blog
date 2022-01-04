@@ -1,4 +1,4 @@
-# Project-2
+# Project-2 - Travel Blog
 
 ## Licensing:
 
@@ -6,7 +6,7 @@
 
 ## Table of Contents
 
-- [Project-2](#project-2)
+- [Project-2 - Travel Blog](#project-2---travel-blog)
   - [Licensing:](#licensing)
   - [Table of Contents](#table-of-contents)
   - [Description:](#description)
@@ -19,7 +19,7 @@
 
 ## Description:
 
-This app will generate a ReadMe file by answering a few prompts.
+This is a group project that was created using the MVC (Model-View-Controller) paradigm. This is a basic CMS style blog site about your favorite destinations. You can go to the site using the Heroku link listed below in the Additional Info section. Or you can run locally by visiting the GitHub account listed below in the Additional Info section and cloning the repo. If running locally you will need to install the npm packages and create an .env file. Once you are at the site you can view current post and comments from other travelers. By signing up or logging in you can post your own favorite destinations and uploaded an image from your adventure. Once you are logged in you can update your post, delete your post or comment on post.
 
 ## Installation:
 
@@ -63,6 +63,10 @@ By running 'node index.js' in the terminal and answering all the questions.
 
 ## Additional Info:
 
-- Github: [bilcon](https://github.com/bilcon/readme-generator)
-- Email: bilcon@swbell.net
-- Screencatify: https://watch.screencastify.com/v/yO6zGT1QLXtJ3KW7IQeF
+- Heroku Link: [travel-blog-project-2.herokuapp.com/](https://travel-blog-project-2.herokuapp.com/)
+- Github:
+
+- Email:
+- Screencatify: ![](2022-01-04-05-21-56.png)
+- ![](2022-01-04-05-24-00.png)
+- ![](2022-01-04-05-24-50.png)
