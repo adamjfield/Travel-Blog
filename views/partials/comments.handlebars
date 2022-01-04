@@ -1,0 +1,17 @@
+        views/partials/dashboard-postinfo.handlebars<div class='comments'>
+  {{#each this}}
+    <div class='card m-3'>
+      <section class='comment card-body'>
+        <div class='text'>
+          <span style='font-weight: bold;;'>{{user.username}}</span>
+          on
+          {{format_date created_at}}
+        </div>
+        <div class='meta'>
+          -
+          {{comment_text}}
+        </div>
+      </section>
+    </div>
+  {{/each}}
+</div>
