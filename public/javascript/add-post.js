@@ -16,13 +16,13 @@ async function addPostFormHandler(event) {
 
   const title = document.querySelector('#post-title').value.trim();
   const content = document.querySelector('#content').value.trim();
-  const postAlert = document.querySelector('#post-alert');
+  const postBlankAlert = document.querySelector('#post-alert');
 
   if (title === '' || content === '') {
-    postAlert.style.display = 'block';
+    postBlankAlert.style.display = 'block';
     return;
   } else {
-    postAlert.style.display = 'none';
+    postBlankAlert.style.display = 'none';
   }
 
   let response_post = await fetch('api/posts', {

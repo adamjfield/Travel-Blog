@@ -22,7 +22,7 @@
           <a class='nav-link' href='/Dashboard'>Dashboard</a>
           {{!-- {{/if}} --}}
           {{#if loggedIn}}
-            <a class='nav-link' id="logout" href="/">Logout</a>
+            <a class='nav-link' id='logout' href='/'>Logout</a>
           {{else}}
             <a class='nav-link' href='/Login'>Login</a>
           {{/if}}
@@ -42,11 +42,13 @@
         <ul class='dropdown-menu'>
           <li><a class='dropdown-item' href='/'>Home</a></li>
           <li><a class='dropdown-item' href='/blog'>Blog</a></li>
+          {{!-- {{#if loggedIn}} --}}
           <li><a class='dropdown-item' href='/dashboard'>Dashboard</a></li>
+          {{!-- {{/if}} --}}
           {{#if loggedIn}}
-          <li><a class='dropdown-item' id="logout" href='/'>Logout</a></li>
+            <li><a class='dropdown-item' id='logout' href='/'>Logout</a></li>
           {{else}}
-          <li><a class='dropdown-item' href='/login'>Login</a></li>
+            <li><a class='dropdown-item' href='/login'>Login</a></li>
           {{/if}}
         </ul>
       </div>
@@ -61,6 +63,6 @@
     crossorigin='anonymous'
   ></script>
   {{#if loggedIn}}
-  <script src="/javascript/logout.js"></script>
+    <script src='/javascript/logout.js'></script>
   {{/if}}
 </html>
