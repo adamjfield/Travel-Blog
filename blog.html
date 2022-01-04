@@ -6,41 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Travel Blog Dashboard</title>
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css"
     />
     <link rel="stylesheet" href="./public/stylesheets/style.css" />
   </head>
 
   <body>
-    <header class='sticky-top'>
-      <h1 id='logo'>Travel Blog</h1>
+    <header class="sticky-top">
+      <h1 id="logo">Travel Blog</h1>
       <div>
-        <nav class='nav nav-bar justify-content-end'>
-          <a class='nav-link' href='/'>Home</a>
-          <a class='nav-link' href='/blog'>Blog</a>
-          <a class='nav-link' href='/dashboard'>Dashboard</a>
-            <a class='nav-link' id="logout" href="/">Logout</a>
-            <a class='nav-link' href='/login'>Login</a>
+        <nav class="nav nav-bar justify-content-end">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/blog">Blog</a>
+          <a class="nav-link" href="/dashboard">Dashboard</a>
+          <a class="nav-link" id="logout" href="/">Logout</a>
+          <a class="nav-link" href="/login">Login</a>
         </nav>
       </div>
-      <div class='dropdown dropdown-nav'>
+      <div class="dropdown dropdown-nav">
         <a
-          class='btn btn-secondary dropdown-toggle menu-btn btn-lg'
-          href='#'
-          role='button'
-          id='dropdownMenuLink'
-          data-bs-toggle='dropdown'
-          aria-expanded='false'
+          class="btn btn-secondary dropdown-toggle menu-btn btn-lg"
+          href="#"
+          role="button"
+          id="dropdownMenuLink"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
         >
           Menu
         </a>
-        <ul class='dropdown-menu'>
-          <li><a class='dropdown-item' href='/'>Home</a></li>
-          <li><a class='dropdown-item' href='/blog'>Blog</a></li>
-          <li><a class='dropdown-item' href='/dashboard'>Dashboard</a></li>
-          <li><a class='dropdown-item' id="logout" href='/'>Logout</a></li>
-          <li><a class='dropdown-item' href='/login'>Login</a></li>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/">Home</a></li>
+          <li><a class="dropdown-item" href="/blog">Blog</a></li>
+          <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+          <li><a class="dropdown-item" id="logout" href="/">Logout</a></li>
+          <li><a class="dropdown-item" href="/login">Login</a></li>
         </ul>
       </div>
     </header>
@@ -51,92 +51,99 @@
         src="./public/images/worldpoliticallarge.jpg"
         alt="world map with country's name"
       />
-    <div class='all-posts container'>
-    <h2 class='text-center p-4'>Everyone's Favorite Destinations</h2>
-      <div class='card mb-5 row border-primary'>
-        <div class='card-header'><h3><a
-              class='link'
-              href='/dashboard/edit/{{id}}'
-            >Kanapolis State Park</a></h3></div>
-        <div class='card-body'>
-          <blockquote class='blockquote row'>
-            <div class='post-image mx-auto col-md-12 col-lg-6'>
-              <img
-                class='fav-img img-fluid'
-                src='./public/images/IMG_0532.JPG'
-                alt='riding trails'
-                style='height: auto;width:400px p-4'
-              />
-            </div>
-            <div class='col-md-12 col-lg-6'>
-              <p>
-                This state park is located a short distance outside of Salina
-                Kansas. It has a great area for camping with horses. Most
-                camping sites have full electrical and water hook ups for your
-                convenience. There are great trails to ride although you have to
-                ride a few miles before getting to the good stuff. There are
-                canyons to ride through, water crossings to cross and wooded
-                areas to get out of the sun.
-              </p>
-              <footer class='blockquote-footer'>username</footer>
-            </div>
-          </blockquote>
+      <div class="all-posts container">
+        <h2 class="text-center p-4">Everyone's Favorite Destinations</h2>
+        <div class="card mb-5 row border-primary">
+          <div class="card-header">
+            <h3>
+              <a class="link" href="/dashboard/edit/{{id}}"
+                >Kanapolis State Park</a
+              >
+            </h3>
+          </div>
+          <div class="card-body">
+            <blockquote class="blockquote row">
+              <div class="post-image mx-auto col-md-12 col-lg-6">
+                <img
+                  class="fav-img img-fluid"
+                  src="./public/images/IMG_0532.JPG"
+                  alt="riding trails"
+                  style="height: auto; width: 400px p-4"
+                />
+              </div>
+              <div class="col-md-12 col-lg-6">
+                <p>
+                  This state park is located a short distance outside of Salina
+                  Kansas. It has a great area for camping with horses. Most
+                  camping sites have full electrical and water hook ups for your
+                  convenience. There are great trails to ride although you have
+                  to ride a few miles before getting to the good stuff. There
+                  are canyons to ride through, water crossings to cross and
+                  wooded areas to get out of the sun.
+                </p>
+                <footer class="blockquote-footer">
+                  username on 12/31/2021
+                </footer>
+              </div>
+            </blockquote>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <form class="card-body comment-form px-auto" id="comment-form">
-        <label class="form-label mx-auto" style="font-weight: bold;">Comment: </label>
-        <input id="comment" class="form-input mx-auto" style="width: 75%;" />
-      </form>
-      <button type="submit" class="btn comment-btn m-1">Submit</button>
+        <div class="card container">
+          <form class="card-body comment-form px-auto" id="comment-form">
+            <div class="row">
+              <label
+                class="form-label mt-3 col text-center"
+                style="font-weight: bold"
+                >Comment:</label
+              >
+              <input id="comment" class="form-input mx-auto col-8" />
+              <button type="submit" class="btn comment-btn m-2 col">
+                Submit
+              </button>
+            </div>
+            <div
+              class="alert alert-danger comment-alert m-2 text-center"
+              id="comment-alert"
+            >
+              <strong>Must comment text!</strong>
+            </div>
+          </form>
+        </div>
       </div>
       <div class="comments">
-        <div class="card m-3" >
+        <div class="card m-3">
           <section class="comment card-body">
             <div class="text">
-                <span style="font-weight: bold;;">Username</span> on 12/29/2021
+              <span style="font-weight: bold">Username</span> on 12/29/2021
             </div>
-            <div class="meta">
-                - This is a comment
-            </div>
+            <div class="meta">- This is a comment</div>
           </section>
         </div>
-        <div class="card m-3" >
+        <div class="card m-3">
           <section class="comment card-body">
-            <div class="text">
-                <strong>Username</strong> on 12/29/2021
-            </div>
-            <div class="meta">
-                - This is a comment
-            </div>
+            <div class="text"><strong>Username</strong> on 12/29/2021</div>
+            <div class="meta">- This is a comment</div>
           </section>
         </div>
-        <div class="card m-3" >
+        <div class="card m-3">
           <section class="comment card-body">
-            <div class="text">
-                username on 12/29/2021
-            </div>
-            <div class="meta">
-                - This is a comment
-            </div>
+            <div class="text">username on 12/29/2021</div>
+            <div class="meta">- This is a comment</div>
           </section>
         </div>
-        <div class="card m-3" >
+        <div class="card m-3">
           <section class="comment card-body">
-            <div class="text">
-                username on 12/29/2021
-            </div>
-            <div class="meta">
-                - This is a comment
-            </div>
+            <div class="text">username on 12/29/2021</div>
+            <div class="meta">- This is a comment</div>
           </section>
         </div>
       </div>
     </div>
-<script
-src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js'
-integrity='sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p'
-crossorigin='anonymous'
-></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./public/javascript/comment.js"></script>
   </body>
 </html>

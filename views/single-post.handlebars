@@ -10,12 +10,23 @@
     
 </div>
 {{#if loggedIn}}
-<div class="card">
-    <form class="card-body comment-form px-auto" id="comment-form">
-    <label class="form-label mx-auto" style="font-weight: bold;">Comment: </label>
-    <input id="comment" class="form-input mx-auto" style="width: 75%;" />
-</form>
-<button type="submit" class="btn comment-btn m-1">Submit</button>
+<div class="card container">
+  <form class="card-body comment-form px-auto" id="comment-form">
+    <div class="row">
+      <label
+      class="form-label mt-3 col text-center"
+      style="font-weight: bold"
+      >Comment:</label>
+      <input id="comment" class="form-input mx-auto col-8"/>
+      <button type="submit" class="btn comment-btn m-2 col">Submit</button>
+    </div>
+    <div
+    class="alert alert-danger comment-alert m-2 text-center"
+    id="comment-alert"
+    >
+      <strong>Must comment text!</strong>
+    </div>
+  </form>
 </div>
 {{/if}}
 
