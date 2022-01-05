@@ -18,10 +18,8 @@
         <nav class='nav nav-bar justify-content-end'>
           <a class='nav-link' href='/'>Home</a>
           <a class='nav-link' href='/blog'>Blog</a>
-          {{!-- {{#if loggedIn}} --}}
-          <a class='nav-link' href='/Dashboard'>Dashboard</a>
-          {{!-- {{/if}} --}}
           {{#if loggedIn}}
+            <a class='nav-link' href='/Dashboard'>Dashboard</a>
             <a class='nav-link' id='logout' href='/'>Logout</a>
           {{else}}
             <a class='nav-link' href='/Login'>Login</a>
@@ -42,11 +40,11 @@
         <ul class='dropdown-menu'>
           <li><a class='dropdown-item' href='/'>Home</a></li>
           <li><a class='dropdown-item' href='/blog'>Blog</a></li>
-          {{!-- {{#if loggedIn}} --}}
-          <li><a class='dropdown-item' href='/dashboard'>Dashboard</a></li>
-          {{!-- {{/if}} --}}
           {{#if loggedIn}}
-            <li><a class='dropdown-item' id='logout' href='/'>Logout</a></li>
+            <li><a class='dropdown-item' href='/dashboard'>Dashboard</a></li>
+          {{/if}}
+          {{#if loggedIn}}
+            <li><a class='dropdown-item logout' id='logout' href='/'>Logout</a></li>
           {{else}}
             <li><a class='dropdown-item' href='/login'>Login</a></li>
           {{/if}}

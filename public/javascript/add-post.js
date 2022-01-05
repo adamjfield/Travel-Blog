@@ -26,7 +26,7 @@ var myWidget = cloudinary.createUploadWidget(
         imageContainer.appendChild(imageLink);
       }
     } else {
-      alert(response_post.statusText);
+      // alert(response_post.statusText);
     }
   }
 );
