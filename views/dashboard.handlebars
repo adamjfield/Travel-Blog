@@ -28,20 +28,21 @@
             style='width:50%;font-size:14px;'
           />
           <label for='content'>Text</label>
-          <input
-            id='content'
-            name='content'
+          <textarea 
+            name="content" 
+            id="content" 
+            cols="30" 
+            rows="10"
             class='ctrInput border-primary'
-            style='height:200px;font-size:14pt;width:75%'
-          />
+            style='height:200px;font-size:14pt;width:75%' ></textarea>
           <div class='alert alert-danger post-alert' id='post-alert'>
             <strong>Must input post title and text!</strong>
           </div>
           <button type='submit' class='btn m-3 submit'>Create</button>
+        <div id="uploaded-images"></div>
         </form>
           <button id='upload_widget' class='btn m-3'>Upload
           files</button>
-        
       </section>
     </div>
   </div>

@@ -1,15 +1,42 @@
 var addedImages = [];
-var myWidget = cloudinary.createUploadWidget({ cloudName: 'dbbxaadyd', uploadPreset: 'ml_default'}, async(error, result) => {
-  console.log(result)
-  if (!error && result && result.event === "success") { 
-    //console.log('Done! Here is the image info: ', result.info); 
-    console.log('Url : ' + result.info.url)
-    addedImages.push(result.info.url);    
-  } 
-  else {console.log(error)} 
-})
-document.getElementById("upload_widget").addEventListener("click", function(){
-myWidget.open(); }, false);
+var myWidget = cloudinary.createUploadWidget(
+  { cloudName: 'dbbxaadyd', uploadPreset: 'ml_default' },
+  async (error, result) => {
+    // console.log(result);
+    if (!error && result && result.event === 'success') {
+      //console.log('Done! Here is the image info: ', result.info);
+      // console.log('Url : ' + result.info.url);
+      addedImages.push(result.info.url);
+      let removeContainer = document.querySelector('#uploaded-images');
+      removeContainer.remove();
+      let imageContainer = document.createElement('div');
+      imageContainer.setAttribute('id', 'uploaded-images');
+      for (let i = 0; i < addedImages.length; i++) {
+        let image = addedImages[i];
+        const postForm = document.querySelector('.new-post-form');
+
+
+        let imageLink = document.createElement('a');
+        imageLink.classList = 'image-link';
+        imageLink.setAttribute('href', image);
+        imageLink.setAttribute('target', '_blank');
+        imageLink.textContent = 'Image ' + (i + 1);
+
+        postForm.appendChild(imageContainer);
+        imageContainer.appendChild(imageLink);
+      }
+    } else {
+      alert(response_post.statusText);
+    }
+  }
+);
+document.getElementById('upload_widget').addEventListener(
+  'click',
+  function () {
+    myWidget.open();
+  },
+  false
+);
 
 async function addPostFormHandler(event) {
   event.preventDefault();
@@ -35,7 +62,9 @@ async function addPostFormHandler(event) {
       'Content-Type': 'application/json',
     },
   });
-  const result = await response_post.json()
+
+  const result = await response_post.json();
+
   if (response_post.ok) {
     let response = await fetch('./api/image', {
       method: 'post',
@@ -45,12 +74,11 @@ async function addPostFormHandler(event) {
       }),
       headers: { 'Content-Type': 'application/json' },
     });
-
     if (response) {
       document.location.replace('/dashboard');
     } else {
       document.location.replace('/dashboard');
-    }  
+    }
   } else {
     alert(response_post.statusText);
   }

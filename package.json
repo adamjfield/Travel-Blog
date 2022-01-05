@@ -22,6 +22,7 @@
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^10.0.0",
     "express": "^4.17.2",
     "express-handlebars": "^6.0.2",
     "express-session": "^1.17.2",
@@ -29,7 +30,6 @@
     "sequelize": "^6.12.4"
   },
   "devDependencies": {
-    "dotenv": "^10.0.0",
     "jest": "^27.4.5"
   }
 }

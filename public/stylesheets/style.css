@@ -125,6 +125,16 @@ h3 a:hover {
   color: rgb(248, 155, 41);
 }
 
+.image-link {
+    color: #0a3e83;
+    font-size: 2rem;
+    padding: 10px;
+}
+
+.image-link:hover {
+    color: rgb(248, 155, 41);
+}
+
 @media (max-width: 992px) {
   .nav-bar {
     display: none;
