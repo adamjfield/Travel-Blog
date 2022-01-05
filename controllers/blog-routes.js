@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Comment } = require('../models');
+const { Post, User, Comment, Photo } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
@@ -18,6 +18,10 @@ router.get('/', (req, res) => {
       {
         model: User,
         attributes: ['username'],
+      },
+      {
+        model: Photo,
+        attributes: ['url'],
       },
     ],
   })
@@ -50,6 +54,10 @@ router.get('/post/:id', (req, res) => {
         model: User,
         attributes: ['username'],
       },
+      {
+        model: Photo,
+        attributes: ['url'],
+      },
     ],
   })
     .then(dbPostData => {
@@ -58,7 +66,6 @@ router.get('/post/:id', (req, res) => {
         return;
       }
       const post = dbPostData.get({ plain: true });
-      console.log(post);
       res.render('single-post', { post, loggedIn: req.session.loggedIn });
     })
     .catch(err => {
@@ -101,6 +108,6 @@ router.get('/posts-comments', (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
-}); 
+});
 
 module.exports = router;
