@@ -5,9 +5,8 @@
 />
 <div class='hero container pt-4'>
   <div class='row'>
-    
     {{#if posts.length}}
-    <section class='formDiv col'>
+    <section class='formDiv col-lg-6 col-md-12'>
         <h2>Your Posts</h2>
         {{#each posts as |post|}}
           {{> dashboard-postinfo post}}
@@ -15,7 +14,7 @@
     </section>
     {{/if}}
 
-    <div class='col'>
+    <div class='{{#if posts.length}}col-lg-6{{/if}} col-md-12'>
       <section class='formDiv'>
         <h2>Create New Post</h2>
         <form class='new-post-form'>
