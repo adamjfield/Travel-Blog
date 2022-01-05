@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
       {
         model: Photo,
         attributes: ['url'],
-      }
+      },
     ],
   })
     .then(dbPostData => {
@@ -33,10 +33,6 @@ router.get('/', (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
-});
-
-router.get('/post/:id', (req, res) => {
-  res.render('dashboard');
 });
 
 router.get('/post/:id', (req, res) => {
@@ -58,6 +54,10 @@ router.get('/post/:id', (req, res) => {
         model: User,
         attributes: ['username'],
       },
+      {
+        model: Photo,
+        attributes: ['url'],
+      },
     ],
   })
     .then(dbPostData => {
@@ -66,7 +66,6 @@ router.get('/post/:id', (req, res) => {
         return;
       }
       const post = dbPostData.get({ plain: true });
-      console.log(post);
       res.render('single-post', { post, loggedIn: req.session.loggedIn });
     })
     .catch(err => {
@@ -109,6 +108,6 @@ router.get('/posts-comments', (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
-}); 
+});
 
 module.exports = router;
