@@ -66,7 +66,7 @@ async function addPostFormHandler(event) {
   const result = await response_post.json();
 
   if (response_post.ok) {
-    let response = await fetch('./image/image', {
+    let response = await fetch('/image/image', {
       method: 'post',
       body: JSON.stringify({
         images: addedImages,
