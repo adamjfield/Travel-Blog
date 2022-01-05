@@ -85,6 +85,6 @@ To test this application you can navigate to the deployed Heroku website by usin
 
 - Email:
 - Screencatify:
-- ![](2022-01-04-05-21-56.png)
-- ![](2022-01-04-05-24-00.png)
-- ![](2022-01-04-05-24-50.png)
+- ![](./assests/images/2022-01-04-05-21-56.png)
+- ![](./assests/images/2022-01-04-05-24-00.png)
+- ![](./assests/images/2022-01-04-05-24-50.png)
