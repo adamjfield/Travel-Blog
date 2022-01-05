@@ -1,0 +1,26 @@
+<div class='card mb-5 row border-primary'>
+  <div class='card-header'><h3><a
+        class='link'
+        href='/post/{{id}}'
+      >{{title}}</a></h3></div>
+  <div class='card-body post'>
+    <blockquote class='blockquote row'>
+      <div class='post-image mx-auto col-md-12 col-lg-6'>
+        <img
+          class='fav-img img-fluid'
+          src='/images/IMG_0532.JPG'
+          alt='riding trails'
+          style='height: auto;width:400px p-4'
+        />
+      </div>
+      <div class='col-md-12 col-lg-6'>
+        <p>
+          {{content}}
+        </p>
+        <footer class='blockquote-footer'>{{user.username}}
+          on
+          {{format_date created_at}}</footer>
+      </div>
+    </blockquote>
+  </div>
+</div>
