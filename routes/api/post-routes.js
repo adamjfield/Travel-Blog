@@ -1,17 +1,12 @@
 const router = require('express').Router();
-const { User, Post, Comment, Image } = require('../../models');
+const { User, Post, Comment } = require('../../models');
 
-// The `/api/categories` endpoint
+// The `/api/users` endpoint
 
 router.get('/', (req, res) => {
-  // find all categories
-  Category.findAll({
-    attributes: ['id', 'user_name'],
-    include: [
-      {
-        model: User,
-      },
-    ],    
+  // find all users
+  User.findAll({
+    attributes: { exclude: ['password'] },   
   })
   .then((dbUserData) => res.json(dbUserData))
   .catch((err) => {
@@ -21,25 +16,38 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  // find one category by its `id` value
-  // be sure to include its associated Products
-  Category.findOne({
+  // find one User by its `id` value
+  // be sure to include its associated posts
+  User.findOne({
+    attributes: { exclude: ['password'] },
     where: {
-        id: req.params.id,
+      id: req.params.id,
     },
     include: [
       {
-        model: Product,
-        attributes: ['id', 'product_name', 'price', 'stock', 'category_id'],
+        model: Post,
+        attributes: ['id', 'title', 'content', 'created_at'],
+      },
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'created_at'],
+        include: {
+          model: Post,
+          attributes: ['title'],
+        },
+      },
+      {
+        model: Post,
+        attributes: ['title'],
       },
     ],
   })
-  .then((dbCategoryData) => {
-    if (!dbCategoryData) {
-      res.status(404).json({ message: "No category found for given id." });
+  .then((dbUserData) => {
+    if (!dbUserData) {
+      res.status(404).json({ message: "No User found with given id." });
       return;
     }
-    res.json(dbCategoryData);
+    res.json(dbUserData);
   })
   .catch((err) => {
     console.log(err);
@@ -48,35 +56,18 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // create a new category
-  Category.create({
-    category_name: req.body.category_name,
+  // create a new User
+  User.create({
+    user_name: req.body.User_name,
+    password: req.body.password,
   })
-  .then((dbProductData) => res.json(dbProductData))
-  .catch((err) => {
-    console.log(err);
-    res.status(500).json(err);
-  });
-});
-
-router.put('/:id', (req, res) => {
-  // update a category by its `id` value
-  Category.update(
-    {
-      category_name: req.body.category_name,
-    },
-    {
-      where: {
-        id: req.params.id,
-      },
-    }
-  )
-  .then((dbCategoryData) => {
-    if (!dbCategoryData) {
-      res.status(404).json({ message: "No category found with given id." });
-      return;
-    }
-    res.json(dbCategoryData);
+  .then((dbUserData) => {
+    req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.user_name = dbUserData.user_name;
+      req.session.loggedIn = true;
+      res.json(dbUserData);
+    });
   })
   .catch((err) => {
     console.log(err);
@@ -84,19 +75,28 @@ router.put('/:id', (req, res) => {
   });
 });
 
-router.delete('/:id', (req, res) => {
-  // delete a category by its `id` value
-  Category.destroy({
+router.post('/login', (req, res) => {
+  User.findOne({
     where: {
-      id: req.params.id
-    }
+      user_name: req.body.user_name,
+    },
   })
-  .then(dbCategoryData => {
-    if (!dbCategoryData) {
-      res.status(404).json({ message: "No category found with given id." });
+  .then(dbUserData => {
+    if (!dbUserData) {
+      res.status(400).json({ message: 'No User with given Username!' });
       return;
     }
-    res.json(dbCategoryData);
+    const validPass = dbUserData.checkPassword(req.body.password);
+    if (!validPass) {
+      res.status(400).json({ message: 'The given Password is Incorrect!' });
+      return;
+    }
+    req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.user_name = dbUserData.user_name;
+      req.session.loggedIn = true;
+      req.json({ user: dbUserData, message: 'You are logged in!' });
+    });
   })
   .catch(err => {
     console.log(err);
@@ -104,4 +104,53 @@ router.delete('/:id', (req, res) => {
   });
 });
 
+router.post('/logout', (req,res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
+
+router.put('/:id', (req, res) => {
+  // update a User by its `id` value
+  User.update(req.body, {
+    individualHooks: true,
+    where: {
+      id: req.params.id,
+    },
+  })
+  .then((dbUserData) => {
+    if (!dbUserData[0]) {
+      res.status(404).json({ message: "No User found with given id." });
+      return;
+    }
+    res.json(dbUserData);
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
+
+router.delete('/:id', (req,res) => {
+  User.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+  .then(dbUserData => {
+    if (!dbUserData) {
+      res.status(404).json({ message: 'No User found with given id.' });
+      return;
+    }
+    res.json(dbUserData);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
 module.exports = router;
