@@ -52,7 +52,7 @@ async function addPostFormHandler(event) {
     postBlankAlert.style.display = 'none';
   }
 
-  let response_post = await fetch('api/posts', {
+  let response_post = await fetch('/api/posts', {
     method: 'post',
     body: JSON.stringify({
       title,
@@ -66,7 +66,7 @@ async function addPostFormHandler(event) {
   const result = await response_post.json();
 
   if (response_post.ok) {
-    let response = await fetch('./api/image', {
+    let response = await fetch('./image/image', {
       method: 'post',
       body: JSON.stringify({
         images: addedImages,
