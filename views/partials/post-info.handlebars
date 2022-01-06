@@ -13,7 +13,7 @@
         <div class='carousel-inner'>
           {{#each photos as |photo|}}
           <div class='carousel-item post-image {{#if @first}}active{{/if}}'>
-            <img src='{{photo.url}}' class='d-block w-100' alt='...' />
+            <a href="{{photo.url}}" target="_blank"><img src='{{photo.url}}' class='d-block w-100' alt='...' /></a>
           </div>
           {{/each}}
         </div>
@@ -25,7 +25,7 @@
         </p>
         <footer class='blockquote-footer'>{{user.username}}
           on
-          {{format_date created_at}}</footer>
+          {{format_date created_at}}{{#if loggedIn}}<a href="/blog/post/{{id}}/#comment" class="comment-link">Leave a comment</a>{{/if}}</footer>
       </div>
     </blockquote>
   </div>
