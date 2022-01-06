@@ -1,0 +1,32 @@
+<div class='card mb-5 row post-card'>
+  <div class='card-header'><h3><a
+        class='link'
+        href='/blog/post/{{id}}'
+      >{{title}}</a></h3></div>
+  <div class='card-body post'>
+    <blockquote class='blockquote row'>
+      {{#if photos.length}}
+      <div
+        id='SimpleCarouselExample'
+        class='carousel slide post-image mx-auto col-md-12 col-lg-6'
+        data-ride='carousel'>
+        <div class='carousel-inner'>
+          {{#each photos as |photo|}}
+          <div class='carousel-item post-image {{#if @first}}active{{/if}}'>
+            <img src='{{photo.url}}' class='d-block w-100' alt='...' />
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      {{/if}}
+      <div class='col-md-12 {{#if photos.length}}col-lg-6{{/if}}'>
+        <p>
+          {{content}}
+        </p>
+        <footer class='blockquote-footer'>{{user.username}}
+          on
+          {{format_date created_at}}</footer>
+      </div>
+    </blockquote>
+  </div>
+</div>

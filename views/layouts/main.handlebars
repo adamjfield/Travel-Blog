@@ -1,0 +1,82 @@
+<html lang='en-US'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta http-equiv='X-UA-Compatible' content='ie=edge' />
+    <title>Travel Blog</title>
+    <link
+      rel='stylesheet'
+      href='https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css'
+    />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+
+  <body>
+    <header class='sticky-top'>
+      <h1 id='logo'>Travel Blog</h1>
+      <div>
+        <nav class='nav nav-bar justify-content-end'>
+          <a class='nav-link' href='/'>Home</a>
+          <a class='nav-link' href='/blog'>Blog</a>
+          {{#if loggedIn}}
+            <a class='nav-link' href='/Dashboard'>Dashboard</a>
+            <a class='nav-link' id='logout' href='/'>Logout</a>
+          {{else}}
+            <a class='nav-link' href='/Login'>Login</a>
+          {{/if}}
+        </nav>
+      </div>
+      <div class='dropdown dropdown-nav'>
+        <a
+          class='btn btn-secondary dropdown-toggle menu-btn btn-lg'
+          href='#'
+          role='button'
+          id='dropdownMenuLink'
+          data-bs-toggle='dropdown'
+          aria-expanded='false'
+        >
+          Menu
+        </a>
+        <ul class='dropdown-menu'>
+          <li><a class='dropdown-item' href='/'>Home</a></li>
+          <li><a class='dropdown-item' href='/blog'>Blog</a></li>
+          {{#if loggedIn}}
+            <li><a class='dropdown-item' href='/dashboard'>Dashboard</a></li>
+          {{/if}}
+          {{#if loggedIn}}
+            <li><a class='dropdown-item logout' id='logout' href='/'>Logout</a></li>
+          {{else}}
+            <li><a class='dropdown-item' href='/login'>Login</a></li>
+          {{/if}}
+        </ul>
+      </div>
+    </header>
+    <main>
+      {{{body}}}
+    </main>
+  </body>
+  <script
+    src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js'
+    integrity='sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p'
+    crossorigin='anonymous'
+  ></script>
+  <script
+    src='https://code.jquery.com/jquery-3.3.1.slim.min.js'
+    integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo'
+    crossorigin='anonymous'
+  ></script>
+  <script
+    src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js'
+    integrity='sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ'
+    crossorigin='anonymous'
+  ></script>
+  <script
+    src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js'
+    integrity='sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm'
+    crossorigin='anonymous'
+  ></script>
+  <script src="/javascript/home-link.js"></script>
+  {{#if loggedIn}}
+    <script src='/javascript/logout.js'></script>
+  {{/if}}
+</html>
