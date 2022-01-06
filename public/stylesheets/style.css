@@ -73,6 +73,7 @@ h3 a:hover {
 
 .comment-link {
   color: #0a3e83;
+  float: right;
 }
 
 .comment-link:hover {
