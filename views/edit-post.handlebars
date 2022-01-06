@@ -8,23 +8,22 @@
     <section class='col formDiv'>
       <h2>Edit Post</h2>
       <form class='edit-post-form'>
-        <label for='post-title'>Title</label>
+        <label for='post-title' style="font-size: 20px">Title</label>
         <input
           type='text'
           id='updated-post-title'
           name='post-title'
-          class='ctrInput border-primary'
-          style='width:75%;font-size:14px;'
+          class='ctrInput'
+          maxlength="40"
           value='{{post.title}}'
         />
-        <label for='content'>Text</label>
+        <label for='content' style="font-size: 20px">Text</label>
         <textarea
           name='content'
           id='updated-post-content'
           cols='30'
           rows='10'
-          class='ctrInput border-primary'
-          style='height:200px;font-size:14pt;width:100%'
+          class='ctrInput'
         >{{post.content}}</textarea>
         <div class='alert alert-danger post-alert' id='post-alert'>
           <strong>Must input post title and text!</strong>

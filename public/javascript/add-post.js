@@ -2,10 +2,7 @@ var addedImages = [];
 var myWidget = cloudinary.createUploadWidget(
   { cloudName: 'dbbxaadyd', uploadPreset: 'ml_default' },
   async (error, result) => {
-    // console.log(result);
     if (!error && result && result.event === 'success') {
-      //console.log('Done! Here is the image info: ', result.info);
-      // console.log('Url : ' + result.info.url);
       addedImages.push(result.info.url);
       let removeContainer = document.querySelector('#uploaded-images');
       removeContainer.remove();
@@ -13,20 +10,17 @@ var myWidget = cloudinary.createUploadWidget(
       imageContainer.setAttribute('id', 'uploaded-images');
       for (let i = 0; i < addedImages.length; i++) {
         let image = addedImages[i];
-        const postForm = document.querySelector('.new-post-form');
+        const imgPreview = document.querySelector('.preview-images');
 
 
-        let imageLink = document.createElement('a');
-        imageLink.classList = 'image-link';
-        imageLink.setAttribute('href', image);
-        imageLink.setAttribute('target', '_blank');
-        imageLink.textContent = 'Image ' + (i + 1);
+        let imageLink = document.createElement('img');
+        imageLink.setAttribute('src', image);
+        imageLink.classList = 'img-thumbnail, img-preview';
 
-        postForm.appendChild(imageContainer);
+        imgPreview.appendChild(imageContainer);
         imageContainer.appendChild(imageLink);
       }
     } else {
-      // alert(response_post.statusText);
     }
   }
 );
