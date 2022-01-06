@@ -6,7 +6,6 @@
 
 ## Table of Contents
 
-- [Project-2 - Travel Blog](#project-2---travel-blog)
   - [Licensing:](#licensing)
   - [Table of Contents](#table-of-contents)
   - [Description:](#description)
@@ -17,6 +16,7 @@
   - [Contribution:](#contribution)
   - [Testing:](#testing)
   - [Additional Info:](#additional-info)
+  - [Screenshots:](#screenshots)
 
 ## Description:
 
@@ -66,7 +66,8 @@ SOFTWARE.
 
 ## Contribution:
 
-Team members are Adam Field, Jeramy Sena, Djamel Ramdani, Rob Burson and Bill Morris.
+Team Members- 
+[Adam Field](https://github.com/adamjfield), [Bill Morris](https://github.com/bilcon), [Jeramy Sena](https://github.com/JeramySena), [Rob Burson](https://github.com/RobBurson), [Djamel Ramdani](https://github.com/scorpiondz1999)
 
 - Adam Field served as project leader and did the javascript, handlebars and consolidated everyone's files.
 - Jeramy Sena provided the models and did the elevator pitch for our presentation.
@@ -81,10 +82,12 @@ To test this application you can navigate to the deployed Heroku website by usin
 ## Additional Info:
 
 - Heroku Link: [travel-blog-project-2.herokuapp.com/](https://travel-blog-project-2.herokuapp.com/)
-- Github:
+- Github: [Link](https://github.com/adamjfield/Travel-Blog)
 
-- Email:
-- Screencatify:
-- ![](./assests/images/2022-01-04-05-21-56.png)
-- ![](./assests/images/2022-01-04-05-24-00.png)
-- ![](./assests/images/2022-01-04-05-24-50.png)
+## Screenshots
+![](./assests/images/Landing-Page.png)
+![](./assests/images/Login-Page.png)
+![](./assests/images/Blog-Page.png)
+![](./assests/images/Single-Post-Page.png)
+![](./assests/images/Dashboard.png)
+![](./assests/images/Edit-Post-Page.png)
