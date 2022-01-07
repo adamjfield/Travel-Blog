@@ -1,10 +1,12 @@
 <img
+  
   class='hero-img'
   src='/images/worldpoliticallarge.jpg'
   alt="world map with country's name"
+  
 />
 <div class='all-posts container'>
-  <h2 class='text-center p-4'>Everyone's Favorite Destinations</h2>
+  <h2 onload="reloadPage()" id="single-post-page" class='text-center p-4'>Everyone's Favorite Destinations</h2>
 
 {{> post-info post}}
     
@@ -35,3 +37,4 @@
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
 {{/if}}
+<script src="/javascript/single-page-reload.js"></script>
