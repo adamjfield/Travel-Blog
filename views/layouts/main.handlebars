@@ -8,6 +8,10 @@
       rel='stylesheet'
       href='https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css'
     />
+    <script
+      src='https://kit.fontawesome.com/8b39784dc3.js'
+      crossorigin='anonymous'
+    ></script>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
 
@@ -44,7 +48,11 @@
             <li><a class='dropdown-item' href='/dashboard'>Dashboard</a></li>
           {{/if}}
           {{#if loggedIn}}
-            <li><a class='dropdown-item logout' id='logout' href='/'>Logout</a></li>
+            <li><a
+                class='dropdown-item logout'
+                id='logout'
+                href='/'
+              >Logout</a></li>
           {{else}}
             <li><a class='dropdown-item' href='/login'>Login</a></li>
           {{/if}}
@@ -75,7 +83,7 @@
     integrity='sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm'
     crossorigin='anonymous'
   ></script>
-  <script src="/javascript/home-link.js"></script>
+  <script src='/javascript/home-link.js'></script>
   {{#if loggedIn}}
     <script src='/javascript/logout.js'></script>
   {{/if}}

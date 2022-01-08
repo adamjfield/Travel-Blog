@@ -35,16 +35,16 @@
         >Delete Post</button>
         <div id='uploaded-images'></div>
       </form>
-      <div id='uploaded-images'>
-        {{#if photos.length}}
-          {{#each photos as |photo|}}
-            <img src='{{photo.url}}' class='' />
-          {{/each}}
-        {{/if}}
+        <button id='upload_widget' class='btn m-3 custom-btn'>Upload New Photos</button>
+        <div class="preview-images">
+      <div id='new-uploaded-images'>
       </div>
     </section>
   </div>
 </div>
-
+<script
+  src='https://upload-widget.cloudinary.com/global/all.js'
+  type='text/javascript'
+></script>
 <script src='/javascript/edit-post.js'></script>
 <script src='/javascript/delete-post.js'></script>

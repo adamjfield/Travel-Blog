@@ -1,6 +1,12 @@
 var addedImages = [];
 var myWidget = cloudinary.createUploadWidget(
-  { cloudName: 'dbbxaadyd', uploadPreset: 'ml_default' },
+  { cloudName: 'dbbxaadyd', uploadPreset: 'ml_default', sources: [
+        "local",
+        "url",
+        "facebook",
+        "instagram",
+        "google_drive"
+    ], },
   async (error, result) => {
     if (!error && result && result.event === 'success') {
       addedImages.push(result.info.url);
@@ -11,7 +17,6 @@ var myWidget = cloudinary.createUploadWidget(
       for (let i = 0; i < addedImages.length; i++) {
         let image = addedImages[i];
         const imgPreview = document.querySelector('.preview-images');
-
 
         let imageLink = document.createElement('img');
         imageLink.setAttribute('src', image);
@@ -60,7 +65,7 @@ async function addPostFormHandler(event) {
   const result = await response_post.json();
 
   if (response_post.ok) {
-    let response = await fetch('/image/image', {
+    let response = await fetch('/api/image', {
       method: 'post',
       body: JSON.stringify({
         images: addedImages,
@@ -70,8 +75,6 @@ async function addPostFormHandler(event) {
     });
     if (response) {
       document.location.replace('/dashboard');
-    } else {
-      document.location.replace('/dashboard');
     }
   } else {
     alert(response_post.statusText);
@@ -80,4 +83,4 @@ async function addPostFormHandler(event) {
 
 document
   .querySelector('.new-post-form')
-  .addEventListener('submit', addPostFormHandler);
+  .addEventListener('submit', addPostFormHandler, false);

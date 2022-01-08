@@ -22,6 +22,10 @@ router.get('/', withAuth, (req, res) => {
         model: User,
         attributes: ['username'],
       },
+      {
+        model: Photo,
+        attributes: ['url', 'id'],
+      },
     ],
   })
     .then(dbPostData => {
