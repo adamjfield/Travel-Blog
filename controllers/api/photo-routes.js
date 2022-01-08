@@ -1,7 +1,5 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
-const { Post, Photo } = require('../../models');
-const withAuth = require('../../utils/auth');
+const { Photo } = require('../../models');
 
 //get all images
 router.get('/', (req, res) => {
