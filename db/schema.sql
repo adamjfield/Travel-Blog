@@ -1,11 +1,5 @@
-<<<<<<< HEAD
 -- DROP DATABASE
 DROP DATABASE IF EXISTS travel_db;
 
 -- CREATE DATABASE
 CREATE DATABASE travel_db;
-=======
-DROP DATABASE IF EXISTS travel_blog_db;
-
-CREATE DATABASE travel_blog_db;
->>>>>>> 9c63ed276d6341c4001e23a229670b842e4ea878
