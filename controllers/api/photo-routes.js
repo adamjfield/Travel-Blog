@@ -1,43 +1,65 @@
-const sequelize = require("../../config/connection");
-const { Post, Photo } = require("../../models");
-const withAuth = require("../../utils/auth");
+const router = require('express').Router();
+const { Photo } = require('../../models');
 
-const router = require("express").Router();
+//get all images
+router.get('/', (req, res) => {
+  Photo.findAll({})
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
-router.post(
-  "/posts",
-  /*withAuth,*/ (req, res) => {
-    //Need to login first
-    Post.create({
-      title: req.body.title,
-      content: req.body.content,
-      user_id: req.session.user_id,
+//get one image
+router.get('/:id', (req, res) => {
+  Photo.findOne({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No post found with this id' });
+        return;
+      }
+      res.json(dbPostData);
     })
-      .then((dbPostData) => {
-        res.json(dbPostData);
-      })
-      .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  }
-);
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
-router.post("/image",/*withAuth,*/ (req, res) => {
+// add images
+router.post('/', (req, res) => {
   let data = [];
   const post_id = req.body.post_id;
-  req.body.images.map((url) => {
+  req.body.images.map(url => {
     data.push({ url, post_id });
   });
-  Photo.bulkCreate(data).then(() => console.log("Users data have been saved"));
+  Photo.bulkCreate(data).then(() => console.log('Users data have been saved'));
   res.send({ response: true });
 });
 
-router.post("/images",/*withAuth,*/ async(req, res) => {  
-  const post_id = req.body.post_id;
-  const photos = await Photo.findAll({ where: { post_id: post_id } });
-  console.log(photos)
-  res.json(photos);
+//delete an image
+router.delete('/:id', (req, res) => {
+  Photo.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No post found with this id' });
+        return;
+      }
+      res.json(dbPostData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;
