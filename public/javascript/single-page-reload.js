@@ -12,4 +12,4 @@ setTimeout(() => {
     const newUrl = '/blog/post/' + id;
     history.replaceState({}, '', newUrl);
   }
-}, 5);
+}, 0);

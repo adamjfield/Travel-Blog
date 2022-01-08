@@ -1,5 +1,20 @@
 <div class='card border-primary dashboard-post'>
   <div class='card-header'>
     <h3><a class='link' href='/dashboard/edit/{{id}}'>{{title}}</a></h3>
+    {{#if photos.length}}
+    <h6 style="">Current Photos</h6>
+      {{#each photos as |photo|}}
+        <i
+          class='delete-img-icon far fa-trash-alt'
+          onClick='deleteImageFormHandler(this.id)'
+          id='{{id}}'
+        ></i>
+        <a href='{{url}}' target='_blank'><img
+            class='posted-img-preview'
+            src='{{photo.url}}'
+            class='img-thumbnail'
+          /></a>
+      {{/each}}
+    {{/if}}
   </div>
 </div>

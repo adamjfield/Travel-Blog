@@ -1,8 +1,7 @@
 {
   "scripts": {
     "start": "node server.js",
-    "test": "jest",
-    "seeds": "node seeds/index.js"
+    "test": "jest"
   },
   "name": "travel-bog",
   "description": "",
@@ -10,15 +9,15 @@
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adamjfield/Project-2.git"
+    "url": "git+https://github.com/adamjfield/Travel-Blog.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Adam Field, Bill Morris, Jeramy Sena, Rob Burson, Djamel Ramdani",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/adamjfield/Project-2/issues"
+    "url": "https://github.com/adamjfield/Travel-Blog/issues"
   },
-  "homepage": "https://github.com/adamjfield/Project-2#readme",
+  "homepage": "https://github.com/adamjfield/Travel-Blog#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
